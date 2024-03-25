@@ -85,7 +85,7 @@ public class CountVehicles {
         if (currentArea <= (double) vehicleSizeThreshold)
             return "Car";
         else if (currentArea <= 1.9 * (double) vehicleSizeThreshold)
-            return "Van";
+            return "bus";
         else return "Lorry";
     }
 

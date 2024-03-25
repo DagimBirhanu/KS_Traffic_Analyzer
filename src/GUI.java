@@ -94,21 +94,21 @@ public class GUI {
 
     private JFormattedTextField carsAmountField;
     private JFormattedTextField carsSpeedField;
-    private JFormattedTextField vansAmountField;
-    private JFormattedTextField vansSpeedField;
+    private JFormattedTextField busAmountField;
+    private JFormattedTextField busSpeedField;
     private JFormattedTextField lorriesAmountField;
     private JFormattedTextField lorriesSpeedField;
 
     private int cars = 0;
-    private int vans = 0;
+    private int bus = 0;
     private int lorries = 0;
 
     private double sumSpeedCar = 0;
-    private double sumSpeedVan = 0;
+    private double sumSpeedbus = 0;
     private double sumSpeedLorry = 0;
 
     private int divisorCar = 1;
-    private int divisorVan = 1;
+    private int divisorbus = 1;
     private int divisorLorry = 1;
 
     private JRadioButton onButton;
@@ -333,9 +333,9 @@ public class GUI {
                     cars++;
                     carsAmountField.setValue(cars);
                     break;
-                case "Van":
-                    vans++;
-                    vansAmountField.setValue(vans);
+                case "bus":
+                    bus++;
+                    busAmountField.setValue(bus);
                     break;
                 case "Lorry":
                     lorries++;
@@ -372,11 +372,11 @@ public class GUI {
                         divisorCar++;
                         carsSpeedField.setValue(avgspeed1);
                         break;
-                    case "Van":
-                        sumSpeedVan = sumSpeedVan + currentSpeed;
+                    case "bus":
+                        sumSpeedbus = sumSpeedbus + currentSpeed;
                         double avgspeed2 = sumSpeedVan / divisorVan;
-                        divisorVan++;
-                        vansSpeedField.setValue(avgspeed2);
+                        divisorbus++;
+                        busSpeedField.setValue(avgspeed2);
                         break;
                     case "Lorry":
                         sumSpeedLorry = sumSpeedLorry + currentSpeed;
@@ -411,9 +411,9 @@ public class GUI {
                                     cars--;
                                     carsAmountField.setValue(cars);
                                     break;
-                                case "Van":
-                                    vans--;
-                                    vansAmountField.setValue(vans);
+                                case "bus":
+                                    bus--;
+                                    busAmountField.setValue(bus);
                                     break;
                                 case "Lorry":
                                     lorries--;
@@ -444,7 +444,7 @@ public class GUI {
         saveFile(frame);
 
         infoCars(frame);
-        infoVans(frame);
+        infobus(frame);
         infoLorries(frame);
 
         selectCountingLine(frame);
@@ -680,25 +680,25 @@ public class GUI {
         frame.add(carsSpeedField, c);
     }
 
-    private void infoVans(JFrame frame) {
+    private void infobus(JFrame frame) {
 
-        JLabel vansLabel = new JLabel("Vans", JLabel.CENTER);
-        vansLabel.setFont(new Font("defaut", Font.BOLD, 12));
+        JLabel busLabel = new JLabel("bus", JLabel.CENTER);
+        busLabel.setFont(new Font("defaut", Font.BOLD, 12));
 
         NumberFormat numberFormat = NumberFormat.getNumberInstance();
-        vansAmountField = new JFormattedTextField(numberFormat);
-        vansAmountField.setValue(new Integer(0));
-        vansAmountField.setBackground(Color.YELLOW);
-        vansAmountField.setEditable(false);
-        vansAmountField.setPreferredSize(new Dimension(50, 20));
-        vansAmountField.setHorizontalAlignment(JFormattedTextField.CENTER);
+        busAmountField = new JFormattedTextField(numberFormat);
+        busAmountField.setValue(new Integer(0));
+        busAmountField.setBackground(Color.YELLOW);
+        busAmountField.setEditable(false);
+        busAmountField.setPreferredSize(new Dimension(50, 20));
+        busAmountField.setHorizontalAlignment(JFormattedTextField.CENTER);
 
-        vansSpeedField = new JFormattedTextField(numberFormat);
-        vansSpeedField.setValue(new Integer(0));
-        vansSpeedField.setBackground(Color.GREEN);
-        vansSpeedField.setEditable(false);
-        vansSpeedField.setPreferredSize(new Dimension(50, 20));
-        vansSpeedField.setHorizontalAlignment(JFormattedTextField.CENTER);
+        busSpeedField = new JFormattedTextField(numberFormat);
+        busSpeedField.setValue(new Integer(0));
+        busSpeedField.setBackground(Color.GREEN);
+        busSpeedField.setEditable(false);
+        busSpeedField.setPreferredSize(new Dimension(50, 20));
+        busSpeedField.setHorizontalAlignment(JFormattedTextField.CENTER);
 
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.HORIZONTAL;
@@ -706,13 +706,13 @@ public class GUI {
         c.gridy = 11;
         c.gridwidth = 1;
         c.insets = new Insets(0, 5, 5, 5);
-        frame.add(vansLabel, c);
+        frame.add(busLabel, c);
 
         c.gridy = 12;
         frame.add(vansAmountField, c);
 
         c.gridy = 13;
-        frame.add(vansSpeedField, c);
+        frame.add(busSpeedField, c);
     }
 
     private void infoLorries(JFrame frame) {
@@ -880,21 +880,21 @@ public class GUI {
 
                 carsAmountField.setValue(new Integer(0));
                 carsSpeedField.setValue(new Integer(0));
-                vansAmountField.setValue(new Integer(0));
+                busAmountField.setValue(new Integer(0));
                 vansSpeedField.setValue(new Integer(0));
                 lorriesAmountField.setValue(new Integer(0));
                 lorriesSpeedField.setValue(new Integer(0));
 
                 cars = 0;
-                vans = 0;
+                bus = 0;
                 lorries = 0;
 
                 sumSpeedCar = 0;
-                sumSpeedVan = 0;
+                sumSpeedbus = 0;
                 sumSpeedLorry = 0;
 
                 divisorCar = 1;
-                divisorVan = 1;
+                divisorbus = 1;
                 divisorLorry = 1;
 
                 counter = 0;
